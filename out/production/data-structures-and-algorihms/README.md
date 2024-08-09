@@ -236,3 +236,94 @@ A **Linked List** is a linear data structure where elements are stored in nodes,
 - **Graph Adjacency Representation**: In graph theory, linked lists are used to represent adjacency lists, which is a space-efficient way to represent sparse graphs.
 
 ### Dynamic Arrays
+
+A **Dynamic Array** is a data structure that allows for resizing, unlike a traditional array with a fixed size. Dynamic arrays grow and shrink as needed, making them more flexible and efficient for use cases where the number of elements can change dynamically.
+
+#### How Dynamic Arrays Work
+
+In a dynamic array, the underlying data structure is typically an array with a predefined initial capacity. When the array becomes full (i.e., when the number of elements equals the capacity), a new array with larger capacity is created, and the elements are copied over to this new array. This process is often referred to as "growing" the array.
+
+When elements are removed and the number of elements falls below a certain threshold, the array may "shrink" to save memory by creating a smaller array and copying the elements over.
+
+#### Core Operations
+
+1. **Add (or Append)**: Adds a new element to the end of the dynamic array. If the array is full, it triggers a grow operation to increase its capacity before adding the new element.
+
+    ```java
+    dynamicArray.add("A");
+    ```
+
+2. **Insert**: Adds a new element at a specific index, shifting the subsequent elements to the right. This operation may also trigger a grow operation if the array is full.
+
+    ```java
+    dynamicArray.insert(1, "B");
+    ```
+
+3. **Delete**: Removes a specific element from the array, shifting the subsequent elements to the left to fill the gap. If the size of the array drops below a certain threshold, it may trigger a shrink operation.
+
+    ```java
+    dynamicArray.delete("A");
+    ```
+
+4. **Search**: Searches for a specific element in the array and returns its index if found, or `-1` if the element is not present.
+
+    ```java
+    int index = dynamicArray.search("B");
+    ```
+
+5. **Grow**: Increases the capacity of the array, typically by doubling its size, and copies all the elements to the new array.
+
+6. **Shrink**: Decreases the capacity of the array when a significant portion of the array is empty, usually by halving the size.
+
+#### Dynamic Arrays in Java: `ArrayList`
+
+In Java, the most common implementation of a dynamic array is through the `ArrayList` class. `ArrayList` automatically handles the growing and shrinking of the array behind the scenes, making it easier to use compared to manually managing a dynamic array.
+
+#### Advantages of Dynamic Arrays
+
+- **Resizing Flexibility**: Dynamic arrays can grow and shrink as needed, making them suitable for use cases where the number of elements is unknown or fluctuates frequently.
+- **Random Access**: Similar to traditional arrays, dynamic arrays provide O(1) time complexity for random access to elements.
+- **Efficient Memory Use**: Dynamic arrays only use memory proportional to the number of elements they contain, unlike fixed-size arrays that reserve memory for the maximum capacity.
+
+#### Disadvantages of Dynamic Arrays
+
+- **Resizing Overhead**: Growing and shrinking the array requires copying elements, which can be time-consuming and lead to performance overhead.
+- **Memory Fragmentation**: As the array grows and shrinks, it may lead to memory fragmentation, where memory is allocated in small chunks that are not contiguous.
+
+#### Applications of Dynamic Arrays
+
+- **Dynamic Lists**: Used in scenarios where the number of elements is not known in advance, such as dynamic collections of data.
+- **Buffering Data**: Dynamic arrays are commonly used to store data buffers that grow and shrink dynamically based on input/output operations.
+- **Implementation of Higher-Level Data Structures**: Dynamic arrays serve as the underlying data structure for more complex data structures like stacks, queues, and hash tables.
+
+### LinkedLists vs ArrayLists
+
+#### Overview
+
+In Java, both `LinkedList` and `ArrayList` are part of the Java Collections Framework and implement the `List` interface. However, they have different underlying data structures and thus perform differently in various scenarios.
+
+- **`ArrayList`**: Uses a dynamic array to store elements. It provides O(1) time complexity for accessing elements by index, but can be slower for insertions and deletions, especially in the middle of the list, as elements need to be shifted.
+
+- **`LinkedList`**: Uses a doubly linked list to store elements. It provides O(1) time complexity for insertions and deletions at both ends, but O(n) for accessing elements by index, since it requires traversing the list.
+
+#### Performance Comparison
+
+1. **Access by Index**:
+    - **ArrayList**: Accessing elements by index is very fast (O(1)) because it uses an underlying array.
+    - **LinkedList**: Accessing elements by index is slower (O(n)) because it requires traversing the list from the beginning or the end.
+
+2. **Insertion and Deletion**:
+    - **ArrayList**: Inserting or deleting elements at the end of the list is fast (O(1)), but at the beginning or middle of the list, it can be slow (O(n)) because elements need to be shifted.
+    - **LinkedList**: Insertion and deletion are faster (O(1)) at the beginning or end of the list, and generally more efficient than `ArrayList` for these operations. However, inserting or deleting in the middle requires traversal (O(n)).
+
+#### Situational Recommendations
+
+- **When to use `ArrayList`**:
+    - If your application requires frequent access to elements by index, such as in cases where you're performing a lot of random access operations.
+    - When the size of the list changes infrequently, and most operations are appending to the end of the list.
+    - Ideal for use cases involving data storage where reads outnumber writes.
+
+- **When to use `LinkedList`**:
+    - If your application requires frequent insertions and deletions, especially at the beginning or end of the list.
+    - When working with large lists where memory reallocation during resizing could be costly.
+    - Suitable for scenarios where you need a queue or stack-like behavior, as it efficiently supports operations like adding/removing from both ends.

@@ -13,6 +13,9 @@
   - [LinkedLists vs ArrayLists](#linkedlists-vs-arraylists)
 - [Big O Notation](#big-o-notation)
 - [Searching Algorithms](#searching-algorithms)
+  - [Linear Search](#linear-search)
+  - [Binary Search](#binary-search)
+  - [Interpolation Search](#interpolation-search)
 - [Sorting Algorithms](#sorting-algorithms)
 - [Graphs](#graphs)
 - [Trees](#trees)
@@ -436,5 +439,55 @@ Binary Search is ideal for scenarios where:
 Binary Search is widely used in applications such as searching in databases, looking up records in a sorted array, or even in various algorithms that require efficient search capabilities.
 
 ### Interpolation Search
+
+**Interpolation Search** is an improved variant of Binary Search, designed for searching in a uniformly distributed, sorted array. Unlike Binary Search, which always checks the middle element, Interpolation Search estimates the position of the target value based on the distribution of the data, making it potentially faster in certain scenarios.
+
+#### How It Works
+
+1. **Estimate Position**: The algorithm estimates the position of the target value using the formula:
+
+```java
+int probe = low + (high - low) * (target - array[low]) /
+        (array[high] - array[low]);
+```
+
+
+   Here, `low` and `high` represent the indices of the current search interval, and `target` is the value being searched.
+
+2. **Compare and Adjust**:
+    - If the target value matches the element at the estimated position, the search is complete.
+    - If the target is less than the estimated element, the search continues in the lower subarray.
+    - If the target is greater, the search continues in the upper subarray.
+
+3. **Repeat**: This process is repeated, narrowing down the search interval based on the estimated position, until the target is found or the search interval is empty.
+
+#### Time Complexity
+
+- **O(log log n)** — Interpolation Search can be very fast, with a time complexity of O(log log n) in the best case for uniformly distributed data.
+- However, in the worst case, particularly with non-uniform distributions, the time complexity can degrade to **O(n)**.
+
+#### Advantages
+
+- **Potentially Faster Than Binary Search**: For large, uniformly distributed datasets, Interpolation Search can be more efficient than Binary Search, as it uses a more refined estimate to locate the target.
+- **Effective for Specific Data Types**: It excels in scenarios where the data is uniformly distributed, such as indexes in a database or sorted numerical data.
+
+#### Disadvantages
+
+- **Requires Uniformly Distributed Data**: The algorithm's efficiency depends on the data being uniformly distributed. If the data is not well-distributed, the performance can degrade significantly.
+- **Complexity in Implementation**: Interpolation Search is more complex to implement than Binary Search, requiring a deeper understanding of the data distribution.
+
+#### Use Cases
+
+Interpolation Search is most effective in the following scenarios:
+
+- **Large, Uniformly Distributed Datasets**: Ideal for searching in large datasets where the values are evenly spread out, such as indexes in databases or numerical ranges.
+- **Specific Applications**: Used in situations where the distribution of the data is known and can be leveraged to improve search performance.
+
+While Interpolation Search can offer significant performance improvements over Binary Search in the right context, it is essential to consider the nature of the data before opting for this method.
+
+## Sorting Algorithms
+
+### Bubble Sort
+
 
 

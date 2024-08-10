@@ -434,3 +434,7 @@ Binary Search is ideal for scenarios where:
 - The dataset remains relatively static (few insertions/deletions).
 
 Binary Search is widely used in applications such as searching in databases, looking up records in a sorted array, or even in various algorithms that require efficient search capabilities.
+
+### Interpolation Search
+
+

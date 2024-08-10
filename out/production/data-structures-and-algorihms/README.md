@@ -385,3 +385,52 @@ The following are some of the most common Big O notations, listed from the most 
 
 ### Linear Search
 
+Iterate through a collection one element at a time.
+
+- **Runtime Complexity**: O(n)
+
+#### Disadvantages:
+- Slow for large data sets
+
+#### Advantages:
+- Fast for searches of small to medium data sets
+- Does not need to be sorted
+- Useful for data structures that do not have random access (Linked List)
+
+### Binary Search
+
+**Binary Search** is an efficient algorithm used to find the position of a target value within a sorted array or list. The key idea behind Binary Search is to repeatedly divide the search interval in half, reducing the problem size exponentially with each step.
+
+#### How It Works
+
+1. **Start with the Middle Element**: The algorithm begins by comparing the target value with the middle element of the array.
+2. **Adjust the Search Interval**:
+    - If the target value is equal to the middle element, the search is complete.
+    - If the target value is less than the middle element, the search continues on the left half of the array.
+    - If the target value is greater than the middle element, the search continues on the right half of the array.
+3. **Repeat**: This process is repeated, halving the search interval each time, until the target value is found or the interval is empty.
+
+#### Time Complexity
+
+- **O(log n)** — With each step, the search space is halved, leading to a logarithmic time complexity, which is much faster than linear search for large datasets.
+
+#### Advantages
+
+- **Efficiency**: Binary Search is significantly faster than Linear Search, especially for large, sorted datasets, because it reduces the number of comparisons needed to find the target.
+- **Logarithmic Time**: The algorithm's time complexity of O(log n) makes it highly efficient for searching through large volumes of data.
+
+#### Disadvantages
+
+- **Requires Sorted Data**: Binary Search can only be applied to data that is already sorted. If the data is unsorted, it must first be sorted, which can add to the overall time complexity.
+- **Not Ideal for Dynamic Data**: If the data is frequently updated with insertions and deletions, maintaining a sorted order can be inefficient, making Binary Search less practical in such scenarios.
+- **Less Effective for Small Data Sets**: For very small data sets, the overhead of dividing the search space might not be worth the performance gain over simpler algorithms like Linear Search.
+
+#### Use Cases
+
+Binary Search is ideal for scenarios where:
+
+- The dataset is large and sorted.
+- Fast retrieval of elements is critical.
+- The dataset remains relatively static (few insertions/deletions).
+
+Binary Search is widely used in applications such as searching in databases, looking up records in a sorted array, or even in various algorithms that require efficient search capabilities.

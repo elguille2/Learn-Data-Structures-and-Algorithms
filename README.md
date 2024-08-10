@@ -334,7 +334,7 @@ In Java, both `LinkedList` and `ArrayList` are part of the Java Collections Fram
     - When working with large lists where memory reallocation during resizing could be costly.
     - Suitable for scenarios where you need a queue or stack-like behavior, as it efficiently supports operations like adding/removing from both ends.
 
-### Big O Notation
+## Big O Notation
 
 **Big O Notation** is a mathematical notation used to describe the upper bound of an algorithm's runtime or space complexity in terms of the input size. It provides a way to express how the runtime or space requirements of an algorithm grow as the input size increases. Big O focuses on the worst-case scenario, ensuring that an algorithm will perform within a specific time or space limit, regardless of the input.
 
@@ -381,5 +381,21 @@ The following are some of the most common Big O notations, listed from the most 
         - Solving the Traveling Salesman Problem (TSP) with brute force.
         - Generating all permutations of a set.
 
+## Searching Algorithms
 
+### Linear Search
+
+Iterate through a collection one element at a time.
+
+- **Runtime Complexity**: O(n)
+
+#### Disadvantages:
+- Slow for large data sets
+
+#### Advantages:
+- Fast for searches of small to medium data sets
+- Does not need to be sorted
+- Useful for data structures that do not have random access (Linked List)
+
+### Binary Search
 

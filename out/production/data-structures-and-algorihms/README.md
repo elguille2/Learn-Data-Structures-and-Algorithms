@@ -5,6 +5,12 @@
   - [What is an Algorithm?](#what-is-an-algorithm)
   - [Why learn Data Structures and Algorithms?](#why-learn-data-structures-and-algorithms)
 - [Basic Data Structures](#basic-data-structures)
+  - [Stacks](#stacks)
+  - [Queues](#queues)
+  - [Priority Queues](#priority-queues)
+  - [Linked Lists](#linked-lists)
+  - [Dynamic Arrays](#dynamic-arrays)
+  - [LinkedLists vs ArrayLists](#linkedlists-vs-arraylists)
 - [Big O Notation](#big-o-notation)
 - [Searching Algorithms](#searching-algorithms)
 - [Sorting Algorithms](#sorting-algorithms)
@@ -327,3 +333,55 @@ In Java, both `LinkedList` and `ArrayList` are part of the Java Collections Fram
     - If your application requires frequent insertions and deletions, especially at the beginning or end of the list.
     - When working with large lists where memory reallocation during resizing could be costly.
     - Suitable for scenarios where you need a queue or stack-like behavior, as it efficiently supports operations like adding/removing from both ends.
+
+## Big O Notation
+
+**Big O Notation** is a mathematical notation used to describe the upper bound of an algorithm's runtime or space complexity in terms of the input size. It provides a way to express how the runtime or space requirements of an algorithm grow as the input size increases. Big O focuses on the worst-case scenario, ensuring that an algorithm will perform within a specific time or space limit, regardless of the input.
+
+#### Common Big O Notations
+
+The following are some of the most common Big O notations, listed from the most efficient to the least efficient:
+
+![Graph showing different Big O complexities](https://miro.medium.com/v2/resize:fit:4800/format:webp/1*dWet_YU-5072Kcko7LzsuQ.jpeg)
+
+- **O(1) - Constant Time**: The runtime does not change regardless of the input size. This is the most efficient complexity as the algorithm takes a constant amount of time, no matter how large the input is.
+    - **Examples**:
+        - Accessing an element in an array by index: `array[index]`.
+        - Inserting an element at the beginning of a `LinkedList`.
+
+- **O(log n) - Logarithmic Time**: The runtime grows logarithmically as the input size increases. Algorithms with logarithmic time complexity are very efficient for large datasets.
+    - **Examples**:
+        - Binary search in a sorted array.
+        - Finding an element in a balanced binary search tree (BST).
+
+- **O(n) - Linear Time**: The runtime grows linearly with the input size. If the input size doubles, the runtime also doubles. This is typical of algorithms that need to examine each element in the input.
+    - **Examples**:
+        - Looping through elements in an array.
+        - Searching through a `LinkedList`.
+
+- **O(n log n) - Log-Linear Time**: The runtime grows faster than linear time but slower than quadratic time. This complexity is common in efficient sorting algorithms.
+    - **Examples**:
+        - Quick sort.
+        - Merge sort.
+        - Heap sort.
+
+- **O(n^2) - Quadratic Time**: The runtime grows quadratically as the input size increases. If the input size doubles, the runtime quadruples. This is common in algorithms with nested loops.
+    - **Examples**:
+        - Insertion sort.
+        - Selection sort.
+        - Bubble sort.
+
+- **O(2^n) - Exponential Time**: The runtime doubles with each additional input element. This is very inefficient for large inputs and is often seen in algorithms that solve problems by brute force.
+    - **Examples**:
+        - Solving the Towers of Hanoi.
+        - Certain recursive algorithms that explore all possibilities.
+
+- **O(n!) - Factorial Time**: The runtime grows factorially with the input size. This is the least efficient time complexity and is typically found in algorithms that generate all possible permutations of an input.
+    - **Examples**:
+        - Solving the Traveling Salesman Problem (TSP) with brute force.
+        - Generating all permutations of a set.
+
+## Searching Algorithms
+
+### Linear Search
+

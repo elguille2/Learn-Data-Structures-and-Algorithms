@@ -775,3 +775,37 @@ QuickSort is particularly useful in scenarios where:
 - **General Purpose**: QuickSort is a good default choice for a general-purpose sorting algorithm, with a good balance of efficiency and ease of implementation.
 
 QuickSort is one of the most widely used sorting algorithms due to its efficiency and performance in average cases, making it a popular choice in many real-world applications.
+
+### Hash Tables
+
+A **HashTable** is a data structure that stores key-value pairs. Each key in a HashTable is unique, and it is associated with a specific value. This structure allows for efficient data retrieval based on keys, making operations like insertion, deletion, and lookup very fast.
+
+#### Key Concepts
+
+- **Hashing**: Hashing is the process of converting a key into a specific index within the HashTable. The key is passed through a hash function, which computes an integer (hash code). The hash code is then used to calculate an index within the HashTable using the modulus operator (`%`) with the table's capacity.
+
+```java
+key.hashCode() % capacity = index
+```
+
+- **Bucket**: A bucket is an indexed storage location in the HashTable where one or more entries (key-value pairs) are stored. If multiple keys hash to the same index, these entries are stored together in the same bucket, often implemented as a linked list.
+- **Collision**: A collision occurs when two different keys produce the same hash code and thus map to the same index in the HashTable. Collisions are managed by storing both entries in the same bucket. However, the more collisions there are, the less efficient the HashTable becomes. Reducing collisions by choosing a good hash function and an appropriate table size is critical to maintaining efficiency.
+
+#### Runtime Complexity
+
+- **Best Case: O(1)** — In the best case, the hash function distributes keys uniformly across the table, and there are no collisions, allowing for constant-time operations.
+- **Worst Case: O(n)** — In the worst case, all keys hash to the same index, causing all entries to be stored in a single bucket, resulting in linear-time operations as it degrades to a linked list.
+
+#### Differences Between HashTables and HashMaps
+
+- Thread Safety:
+    - `HashTable` is synchronized, meaning it is thread-safe and can be shared between multiple threads without additional synchronization.
+    - `HashMap` is not synchronized by default, making it faster but not thread-safe. If thread safety is required, HashMap can be synchronized externally using Collections.synchronizedMap().
+- Null Values:
+    - `HashTable` does not allow null keys or values. If you try to insert a null key or value, a NullPointerException is thrown.
+    - `HashMap` allows one null key and multiple null values.
+- Legacy Status:
+    - `HashTable` is considered a legacy class from earlier versions of Java and has largely been replaced by HashMap for most use cases.
+    - `HashMap` is part of the Java Collections Framework and is generally preferred in modern Java programming due to its flexibility and better performance.
+
+HashTables are effective for quick data access and management, especially in multi-threaded environments where synchronization is necessary. However, for most modern applications, HashMap is preferred due to its flexibility and better performance.

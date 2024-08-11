@@ -723,3 +723,58 @@ Merge Sort is particularly useful in scenarios where:
 - **External Sorting**: Commonly used in external sorting algorithms where the data is too large to fit into memory and needs to be sorted using external storage.
 
 Merge Sort is a powerful sorting algorithm, especially when working with large datasets or when stability is a concern. It is widely used in various applications, from simple data sorting to more complex algorithms in computer science.
+
+### QuickSort
+
+**QuickSort** is a highly efficient sorting algorithm that follows the divide-and-conquer paradigm. It works by selecting a "pivot" element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. The sub-arrays are then recursively sorted. This process results in a sorted array.
+
+#### How It Works
+
+1. **Choose a Pivot**: Select an element from the array to serve as the pivot. Common choices include picking the first element, the last element, or a random element.
+
+2. **Partitioning**: Rearrange the array so that all elements less than the pivot are on the left side of the pivot and all elements greater than the pivot are on the right side. The pivot element is then placed in its correct sorted position.
+
+3. **Recursively Sort Sub-arrays**: Recursively apply the above steps to the sub-arrays on the left and right of the pivot.
+
+4. **Base Case**: The recursion terminates when the sub-array has fewer than two elements, meaning it is already sorted.
+
+#### Visualization of the Process
+
+Here is a visual representation of how QuickSort works:
+
+![QuickSort Process](https://cdn-images-1.medium.com/max/1080/1*zI6AMtMYGWqOQUo80r3v8A.jpeg)
+
+This image illustrates the process of choosing a pivot, partitioning the array around the pivot, and recursively sorting the sub-arrays.
+
+#### Time Complexity
+
+- **Best and Average Case**: O(n log n) — QuickSort is efficient when the pivot divides the array into two nearly equal sub-arrays.
+- **Worst Case**: O(n^2) — This occurs when the pivot is consistently the smallest or largest element, leading to unbalanced partitions.
+
+#### Space Complexity
+
+- **O(log n)** — QuickSort is an in-place sorting algorithm, meaning it requires only a small, constant amount of extra space for the recursion stack. However, in the worst case, the space complexity can degrade to O(n) due to deep recursion.
+
+#### Advantages
+
+- **Efficiency**: QuickSort is generally faster in practice than other O(n log n) algorithms like Merge Sort, especially for large datasets.
+- **In-Place Sorting**: It sorts the array in place, requiring only a small amount of extra memory.
+- **Flexibility**: It can be implemented with different strategies for choosing the pivot, which can be tailored to the specific characteristics of the data.
+
+#### Disadvantages
+
+- **Worst-Case Performance**: In its basic form, QuickSort has a worst-case time complexity of O(n^2), which can occur if the pivot selection is poor.
+- **Not Stable**: QuickSort is not a stable sort, meaning that the relative order of equal elements may not be preserved.
+
+#### Use Cases
+
+QuickSort is particularly useful in scenarios where:
+
+- **Large Datasets**: It is often the fastest algorithm for large datasets, especially when the dataset can be partitioned effectively.
+- **In-Place Sorting**: When memory usage is a concern, QuickSort's in-place sorting is an advantage.
+- **General Purpose**: QuickSort is a good default choice for a general-purpose sorting algorithm, with a good balance of efficiency and ease of implementation.
+
+QuickSort is one of the most widely used sorting algorithms due to its efficiency and performance in average cases, making it a popular choice in many real-world applications.
+
+### Hash Tables
+

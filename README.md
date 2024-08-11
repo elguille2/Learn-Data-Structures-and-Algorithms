@@ -587,6 +587,10 @@ Insertion Sort is particularly useful for:
 
 Insertion Sort is often used in practice for small arrays or as a final step in more complex algorithms, such as Quick Sort or Merge Sort, where the overhead of more sophisticated methods is unnecessary.
 
+### Recursion
+
+
+
 
 
 

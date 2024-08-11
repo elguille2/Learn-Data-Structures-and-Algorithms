@@ -19,6 +19,8 @@
   - [Bubble Sort](#bubble-sort)
   - [Selection Sort](#selection-sort)
   - [Insertion Sort](#insertion-sort)
+  - [Recursion](#recursion)
+  - [Merge Sort](#merge-sort)
 - [Sorting Algorithms](#sorting-algorithms)
 - [Graphs](#graphs)
 - [Trees](#trees)
@@ -589,8 +591,135 @@ Insertion Sort is often used in practice for small arrays or as a final step in 
 
 ### Recursion
 
+**Recursion** is a programming technique where a function calls itself in order to solve a problem. This method involves breaking down a problem into smaller, more manageable sub-problems that are easier to solve. Recursion is often used for tasks that can be defined in terms of similar subtasks, such as computing factorials, traversing data structures, or solving puzzles like the Tower of Hanoi.
 
+#### How It Works
 
+Recursion typically involves two main components:
 
+1. **Base Case**: The condition under which the recursion stops. Without a base case, the function would call itself indefinitely, leading to a stack overflow. The base case defines the simplest instance of the problem, which can be solved directly without further recursion.
 
+2. **Recursive Case**: The part of the function where it calls itself with a modified argument, gradually working towards the base case. Each recursive call reduces the problem's complexity, inching closer to the base case until the recursion can terminate.
 
+#### Types of Recursion
+
+Recursion can be classified into several types, including **Tail Recursion** (final recursion), **Non-Tail Recursion** (non-final recursion), **Direct Recursion**, and **Indirect Recursion**.
+
+##### 1. Tail Recursion (Final Recursion)
+
+**Tail Recursion** occurs when the recursive call is the last operation in the function. In other words, there is nothing left to do after the recursive call returns. This type of recursion is more memory-efficient because many compilers and interpreters can optimize tail-recursive functions to avoid adding a new frame to the call stack for each recursive call. This optimization is known as *tail call optimization (TCO)*.
+
+```java
+private static void tailRecursionWalk(int steps) {
+    if (steps == 0) return;  // Base case
+    System.out.println("You take a step");
+    tailRecursionWalk(steps - 1);  // Recursive call
+}
+```
+##### 2. Non-Tail Recursion (Non-Final Recursion)
+
+**Non-Tail Recursion** occurs when there are still operations left to perform after the recursive call returns. This means that each recursive call must wait for the subsequent recursive calls to complete before it can finish its execution, which can lead to higher memory usage as each call is kept on the stack until all calls are resolved.
+
+```java
+private static int nonTailRecursionFactorial(int num) {
+    if (num < 1) return 1;  // Base case
+    return num * nonTailRecursionFactorial(num - 1);  // Recursive call followed by multiplication
+}
+```
+
+##### 3. Direct Recursion
+
+Direct Recursion occurs when a function calls itself directly. This is the most common form of recursion and is what most people think of when they hear the term "recursion."
+
+```java
+private static void directRecursion(int n) {
+    if (n <= 0) return;  // Base case
+    directRecursion(n - 1);  // Recursive call
+}
+```
+
+##### 4. Indirect Recursion
+
+Indirect Recursion occurs when a function calls another function, which eventually leads to the original function being called again. This can involve two or more functions calling each other in a cycle.
+
+```java
+private static void functionA(int n) {
+    if (n <= 0) return;  // Base case
+    functionB(n - 1);  // Call to another function
+}
+
+private static void functionB(int n) {
+    if (n <= 0) return;  // Base case
+    functionA(n - 1);  // Call back to the original function
+}
+```
+
+#### Advantages of Recursion
+
+- Simplifies Complex Problems: Recursion can simplify the solution to complex problems by breaking them down into smaller, more manageable pieces.
+- Natural Fit for Certain Problems: Some problems, particularly those involving hierarchical data structures (like trees or graphs), are naturally suited to recursive solutions.
+
+#### Disadvantages of Recursion
+
+- Performance Overhead: Each recursive call adds a new layer to the call stack, which can lead to high memory usage and slower performance compared to iterative solutions.
+- Risk of Stack Overflow: If the base case is not properly defined or if the recursion is too deep (i.e., too many recursive calls), the program can run out of stack memory, resulting in a stack overflow error.
+- Complexity: Recursive solutions can be more difficult to understand and debug, especially for those new to the concept.
+
+#### Use Cases
+
+Recursion is particularly useful in scenarios where a problem can be naturally divided into similar subproblems, such as:
+
+- Mathematical Calculations: Functions like factorials, Fibonacci sequences, or powers.
+- Data Structure Traversal: Navigating trees, graphs, or other nested data structures.
+- Algorithms: Recursive algorithms like quicksort, merge sort, and binary search.
+
+Recursion is a powerful tool in a programmer's arsenal, but it should be used judiciously, especially when performance and memory usage are critical considerations.
+
+### Merge Sort
+
+**Merge Sort** is a divide-and-conquer algorithm that efficiently sorts an array by dividing it into smaller subarrays, sorting those subarrays, and then merging them back together. This approach ensures that the entire array is sorted in a methodical and efficient manner.
+
+#### How It Works
+
+1. **Divide**: The algorithm starts by dividing the array into two roughly equal halves. This process is repeated recursively until each subarray contains only one element. At this point, each element is considered sorted by definition.
+
+2. **Conquer**: Once the array has been divided into individual elements, the algorithm begins to merge these elements back together. During the merging process, the elements are compared and sorted, ensuring that the resulting merged array is in order.
+
+3. **Combine**: Finally, the sorted subarrays are combined back together to form a fully sorted array.
+
+#### Visualization of the Process
+
+Here is a visual representation of how Merge Sort works:
+
+![Merge Sort Process](https://cdn.educba.com/academy/wp-content/uploads/2021/06/7.png)
+
+This image illustrates the process of dividing the array into smaller subarrays, sorting them, and then merging them back together.
+
+#### Time Complexity
+
+- **O(n log n)** — Merge Sort consistently operates with a time complexity of O(n log n), making it efficient for large datasets. This efficiency comes from the fact that the array is divided in half at each step (log n divisions) and each level requires a linear amount of work to merge the subarrays (n operations).
+
+#### Space Complexity
+
+- **O(n)** — Merge Sort requires additional memory proportional to the size of the array being sorted. This space is used to hold the left and right subarrays during the merge process. The need for extra storage makes Merge Sort less space-efficient compared to in-place sorting algorithms like Quick Sort.
+
+#### Advantages
+
+- **Stable Sorting**: Merge Sort is stable, meaning that it preserves the relative order of equal elements in the array.
+- **Predictable Performance**: It has a consistent O(n log n) time complexity, regardless of the initial order of elements.
+- **Efficient for Large Datasets**: Particularly useful for sorting large datasets due to its efficient handling of data.
+
+#### Disadvantages
+
+- **Additional Memory Usage**: Merge Sort requires additional memory proportional to the size of the array being sorted, as it needs space to hold the left and right subarrays during the merge process.
+- **Not In-Place**: Unlike some other sorting algorithms, Merge Sort does not sort the array in place; it requires extra storage, which can be a disadvantage in memory-constrained environments.
+
+#### Use Cases
+
+Merge Sort is particularly useful in scenarios where:
+
+- **Stable Sort is Required**: Situations where maintaining the relative order of records with equal keys is important.
+- **Large Data Volumes**: Handling large datasets that need to be sorted efficiently, especially when the data is stored on external storage or needs to be processed in chunks.
+- **External Sorting**: Commonly used in external sorting algorithms where the data is too large to fit into memory and needs to be sorted using external storage.
+
+Merge Sort is a powerful sorting algorithm, especially when working with large datasets or when stability is a concern. It is widely used in various applications, from simple data sorting to more complex algorithms in computer science.

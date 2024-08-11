@@ -20,6 +20,7 @@
   - [Selection Sort](#selection-sort)
   - [Insertion Sort](#insertion-sort)
   - [Recursion](#recursion)
+  - [Merge Sort](#merge-sort)
 - [Sorting Algorithms](#sorting-algorithms)
 - [Graphs](#graphs)
 - [Trees](#trees)
@@ -673,3 +674,52 @@ Recursion is particularly useful in scenarios where a problem can be naturally d
 - Algorithms: Recursive algorithms like quicksort, merge sort, and binary search.
 
 Recursion is a powerful tool in a programmer's arsenal, but it should be used judiciously, especially when performance and memory usage are critical considerations.
+
+### Merge Sort
+
+**Merge Sort** is a divide-and-conquer algorithm that efficiently sorts an array by dividing it into smaller subarrays, sorting those subarrays, and then merging them back together. This approach ensures that the entire array is sorted in a methodical and efficient manner.
+
+#### How It Works
+
+1. **Divide**: The algorithm starts by dividing the array into two roughly equal halves. This process is repeated recursively until each subarray contains only one element. At this point, each element is considered sorted by definition.
+
+2. **Conquer**: Once the array has been divided into individual elements, the algorithm begins to merge these elements back together. During the merging process, the elements are compared and sorted, ensuring that the resulting merged array is in order.
+
+3. **Combine**: Finally, the sorted subarrays are combined back together to form a fully sorted array.
+
+#### Visualization of the Process
+
+Here is a visual representation of how Merge Sort works:
+
+![Merge Sort Process](https://cdn.educba.com/academy/wp-content/uploads/2021/06/7.png)
+
+This image illustrates the process of dividing the array into smaller subarrays, sorting them, and then merging them back together.
+
+#### Time Complexity
+
+- **O(n log n)** — Merge Sort consistently operates with a time complexity of O(n log n), making it efficient for large datasets. This efficiency comes from the fact that the array is divided in half at each step (log n divisions) and each level requires a linear amount of work to merge the subarrays (n operations).
+
+#### Space Complexity
+
+- **O(n)** — Merge Sort requires additional memory proportional to the size of the array being sorted. This space is used to hold the left and right subarrays during the merge process. The need for extra storage makes Merge Sort less space-efficient compared to in-place sorting algorithms like Quick Sort.
+
+#### Advantages
+
+- **Stable Sorting**: Merge Sort is stable, meaning that it preserves the relative order of equal elements in the array.
+- **Predictable Performance**: It has a consistent O(n log n) time complexity, regardless of the initial order of elements.
+- **Efficient for Large Datasets**: Particularly useful for sorting large datasets due to its efficient handling of data.
+
+#### Disadvantages
+
+- **Additional Memory Usage**: Merge Sort requires additional memory proportional to the size of the array being sorted, as it needs space to hold the left and right subarrays during the merge process.
+- **Not In-Place**: Unlike some other sorting algorithms, Merge Sort does not sort the array in place; it requires extra storage, which can be a disadvantage in memory-constrained environments.
+
+#### Use Cases
+
+Merge Sort is particularly useful in scenarios where:
+
+- **Stable Sort is Required**: Situations where maintaining the relative order of records with equal keys is important.
+- **Large Data Volumes**: Handling large datasets that need to be sorted efficiently, especially when the data is stored on external storage or needs to be processed in chunks.
+- **External Sorting**: Commonly used in external sorting algorithms where the data is too large to fit into memory and needs to be sorted using external storage.
+
+Merge Sort is a powerful sorting algorithm, especially when working with large datasets or when stability is a concern. It is widely used in various applications, from simple data sorting to more complex algorithms in computer science.

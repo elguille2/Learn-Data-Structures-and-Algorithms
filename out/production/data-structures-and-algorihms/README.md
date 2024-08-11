@@ -489,5 +489,67 @@ While Interpolation Search can offer significant performance improvements over B
 
 ### Bubble Sort
 
+**Bubble Sort** is a simple comparison-based sorting algorithm. It repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. This process is repeated until the list is sorted.
+
+#### How It Works
+
+1. **Compare Adjacent Elements**: Start with the first element of the array and compare it to the next element.
+2. **Swap If Necessary**: If the first element is greater than the second, swap them. Otherwise, move to the next pair of elements.
+3. **Repeat**: Continue this process for each pair of adjacent elements in the array. After one full pass through the array, the largest element will have "bubbled up" to its correct position at the end.
+4. **Iterate Until Sorted**: Repeat the process for the remaining unsorted elements. With each pass, the next largest element is placed in its correct position, reducing the number of elements to check in subsequent passes.
+
+#### Time Complexity
+
+- **Worst-Case and Average Case**: O(n^2) — This occurs when the array is in reverse order or unordered, requiring the maximum number of comparisons and swaps.
+- **Best Case**: O(n) — This occurs when the array is already sorted, and no swaps are needed. The algorithm can terminate early after one pass.
+
+#### Advantages
+
+- **Simplicity**: Bubble Sort is easy to understand and implement.
+- **No Additional Space Required**: It sorts the array in place, so no additional memory is required beyond the input data.
+- **Early Termination**: In the best-case scenario (an already sorted array), the algorithm can terminate early, making it more efficient than other O(n^2) algorithms in such cases.
+
+#### Disadvantages
+
+- **Inefficiency**: Bubble Sort is not suitable for large datasets because of its O(n^2) time complexity in the average and worst cases.
+- **Slowness**: Even for relatively small lists, other sorting algorithms like Quick Sort, Merge Sort, or Insertion Sort are generally faster.
+
+### Use Cases
+
+Bubble Sort is generally used for educational purposes to demonstrate how sorting algorithms work. It's rarely used in practical applications due to its inefficiency. However, it can be useful in situations where the dataset is nearly sorted, and its simplicity is a significant advantage.
+
+### Selection Sort
+
+**Selection Sort** is a simple comparison-based sorting algorithm. It sorts an array by repeatedly finding the smallest (or largest) element in the array and swapping it with the element at the current position.
+
+#### How It Works
+
+1. **Start with the First Element**: Begin with the first element in the array.
+2. **Find the Minimum Element**: Search through the array to find the smallest element.
+3. **Swap**: Swap this smallest element with the element at the current position.
+4. **Move to the Next Position**: Move to the next element in the array and repeat the process until the entire array is sorted.
+
+#### Time Complexity
+
+- **O(n^2)**
+
+#### Advantages
+
+- **Simplicity**: Easy to implement and understand.
+- **In-Place Sorting**: No additional storage space is required.
+
+#### Disadvantages
+
+- **Inefficiency**: Not suitable for large datasets due to O(n^2) time complexity.
+- **Unstable**: May not preserve the relative order of equal elements.
+
+#### Use Cases
+
+Selection Sort is best used for small datasets or in educational contexts to demonstrate basic sorting concepts.
+
+### Insertion Sort
+
+
+
 
 

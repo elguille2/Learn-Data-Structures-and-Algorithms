@@ -16,6 +16,9 @@
   - [Linear Search](#linear-search)
   - [Binary Search](#binary-search)
   - [Interpolation Search](#interpolation-search)
+  - [Bubble Sort](#bubble-sort)
+  - [Selection Sort](#selection-sort)
+  - [Insertion Sort](#insertion-sort)
 - [Sorting Algorithms](#sorting-algorithms)
 - [Graphs](#graphs)
 - [Trees](#trees)
@@ -517,6 +520,73 @@ While Interpolation Search can offer significant performance improvements over B
 ### Use Cases
 
 Bubble Sort is generally used for educational purposes to demonstrate how sorting algorithms work. It's rarely used in practical applications due to its inefficiency. However, it can be useful in situations where the dataset is nearly sorted, and its simplicity is a significant advantage.
+
+### Selection Sort
+
+**Selection Sort** is a simple comparison-based sorting algorithm. It sorts an array by repeatedly finding the smallest (or largest) element in the array and swapping it with the element at the current position.
+
+#### How It Works
+
+1. **Start with the First Element**: Begin with the first element in the array.
+2. **Find the Minimum Element**: Search through the array to find the smallest element.
+3. **Swap**: Swap this smallest element with the element at the current position.
+4. **Move to the Next Position**: Move to the next element in the array and repeat the process until the entire array is sorted.
+
+#### Time Complexity
+
+- **O(n^2)**
+
+#### Advantages
+
+- **Simplicity**: Easy to implement and understand.
+- **In-Place Sorting**: No additional storage space is required.
+
+#### Disadvantages
+
+- **Inefficiency**: Not suitable for large datasets due to O(n^2) time complexity.
+- **Unstable**: May not preserve the relative order of equal elements.
+
+#### Use Cases
+
+Selection Sort is best used for small datasets or in educational contexts to demonstrate basic sorting concepts.
+
+### Insertion Sort
+
+**Insertion Sort** is a simple and intuitive comparison-based sorting algorithm. It builds the final sorted array one element at a time, by repeatedly taking the next unsorted element and inserting it into its correct position relative to the already checked elements in the array.
+
+#### How It Works
+
+1. **Start with the Second Element**: Begin with the second element in the array because it needs to be compared with the first element to determine its correct position.
+2. **Compare and Shift**: Compare the current element with the elements before it in the array. Shift the larger elements to the right until the correct position for the current element is found.
+3. **Insert the Element**: Insert the current element into its correct position within the array.
+4. **Repeat**: Move to the next element and repeat the process until the entire array is sorted.
+
+#### Time Complexity
+
+- **O(n^2)** — In the worst and average cases, Insertion Sort requires comparing and shifting elements, leading to a quadratic time complexity.
+- **O(n)** — In the best case, when the array is already sorted, Insertion Sort performs at linear time.
+
+#### Advantages
+
+- **Simplicity**: Easy to understand and implement.
+- **Efficient for Small or Nearly Sorted Data**: Performs well on small datasets or datasets that are already partially sorted.
+- **Stable**: Preserves the relative order of equal elements.
+- **In-Place Sorting**: Requires no additional memory for sorting, as it rearranges the elements within the original array.
+
+#### Disadvantages
+
+- **Inefficiency on Large Data Sets**: Due to its O(n^2) time complexity, it is not suitable for large datasets.
+
+#### Use Cases
+
+Insertion Sort is particularly useful for:
+
+- **Small Data Sets**: Where its simplicity and efficiency outweigh its quadratic time complexity.
+- **Nearly Sorted Data**: Ideal for situations where the data is already partially sorted, making the algorithm very efficient.
+- **Real-Time Applications**: Because it can sort elements as they arrive, Insertion Sort is sometimes used in real-time systems.
+
+Insertion Sort is often used in practice for small arrays or as a final step in more complex algorithms, such as Quick Sort or Merge Sort, where the overhead of more sophisticated methods is unnecessary.
+
 
 
 

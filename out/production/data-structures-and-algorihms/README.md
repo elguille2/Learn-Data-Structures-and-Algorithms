@@ -16,12 +16,12 @@
   - [Linear Search](#linear-search)
   - [Binary Search](#binary-search)
   - [Interpolation Search](#interpolation-search)
-  - [Bubble Sort](#bubble-sort)
-  - [Selection Sort](#selection-sort)
-  - [Insertion Sort](#insertion-sort)
-  - [Recursion](#recursion)
-  - [Merge Sort](#merge-sort)
 - [Sorting Algorithms](#sorting-algorithms)
+    - [Bubble Sort](#bubble-sort)
+    - [Selection Sort](#selection-sort)
+    - [Insertion Sort](#insertion-sort)
+    - [Recursion](#recursion)
+    - [Merge Sort](#merge-sort)
 - [Graphs](#graphs)
 - [Trees](#trees)
 
@@ -777,4 +777,104 @@ QuickSort is particularly useful in scenarios where:
 QuickSort is one of the most widely used sorting algorithms due to its efficiency and performance in average cases, making it a popular choice in many real-world applications.
 
 ### Hash Tables
+
+A **HashTable** is a data structure that stores key-value pairs. Each key in a HashTable is unique, and it is associated with a specific value. This structure allows for efficient data retrieval based on keys, making operations like insertion, deletion, and lookup very fast.
+
+#### Key Concepts
+
+- **Hashing**: Hashing is the process of converting a key into a specific index within the HashTable. The key is passed through a hash function, which computes an integer (hash code). The hash code is then used to calculate an index within the HashTable using the modulus operator (`%`) with the table's capacity.
+
+```java
+key.hashCode() % capacity = index
+```
+
+- **Bucket**: A bucket is an indexed storage location in the HashTable where one or more entries (key-value pairs) are stored. If multiple keys hash to the same index, these entries are stored together in the same bucket, often implemented as a linked list.
+- **Collision**: A collision occurs when two different keys produce the same hash code and thus map to the same index in the HashTable. Collisions are managed by storing both entries in the same bucket. However, the more collisions there are, the less efficient the HashTable becomes. Reducing collisions by choosing a good hash function and an appropriate table size is critical to maintaining efficiency.
+
+#### Runtime Complexity
+
+- **Best Case: O(1)** — In the best case, the hash function distributes keys uniformly across the table, and there are no collisions, allowing for constant-time operations.
+- **Worst Case: O(n)** — In the worst case, all keys hash to the same index, causing all entries to be stored in a single bucket, resulting in linear-time operations as it degrades to a linked list.
+
+#### Differences Between HashTables and HashMaps
+
+- Thread Safety:
+    - `HashTable` is synchronized, meaning it is thread-safe and can be shared between multiple threads without additional synchronization.
+    - `HashMap` is not synchronized by default, making it faster but not thread-safe. If thread safety is required, HashMap can be synchronized externally using Collections.synchronizedMap().
+- Null Values:
+    - `HashTable` does not allow null keys or values. If you try to insert a null key or value, a NullPointerException is thrown.
+    - `HashMap` allows one null key and multiple null values.
+- Legacy Status:
+    - `HashTable` is considered a legacy class from earlier versions of Java and has largely been replaced by HashMap for most use cases.
+    - `HashMap` is part of the Java Collections Framework and is generally preferred in modern Java programming due to its flexibility and better performance.
+
+HashTables are effective for quick data access and management, especially in multi-threaded environments where synchronization is necessary. However, for most modern applications, HashMap is preferred due to its flexibility and better performance.
+
+## Graphs
+
+### Introduction to Graphs
+
+A **graph** is a fundamental data structure in computer science used to model relationships between objects. A graph consists of a set of vertices (or nodes) and a set of edges that connect pairs of vertices. Graphs are widely used in various fields, including computer networks, social networks, transportation systems, and many more.
+
+#### Types of Graphs
+
+Graphs can be classified into several types based on their properties:
+
+1. **Directed Graph (Digraph)**: In a directed graph, the edges have a direction, meaning they go from one vertex to another. The direction of the edge is indicated by an arrow. This type of graph is useful for representing one-way relationships, such as the flow of information or traffic.
+
+2. **Undirected Graph**: In an undirected graph, the edges do not have a direction, indicating a bidirectional relationship between vertices. This type of graph is useful for representing mutual relationships, such as friendships in a social network.
+
+3. **Weighted Graph**: In a weighted graph, each edge has an associated numerical value, called a weight. These weights can represent costs, distances, or any other quantitative relationship between the vertices.
+
+4. **Unweighted Graph**: An unweighted graph is a graph where all edges are considered to have the same weight, usually interpreted as 1. This is typical in simple graphs where only the presence or absence of a connection matters.
+
+Here is a visual representation of these types of graphs:
+
+![Types of Graphs](https://images.slideplayer.com/14/4318595/slides/slide_3.jpg)
+
+#### Adjacency Matrix
+
+An **adjacency matrix** is a 2D array of size VxV where V is the number of vertices in a graph. The matrix is used to represent which vertices (or nodes) are adjacent to which other vertices.
+
+- **Directed Graph**: In an adjacency matrix for a directed graph, if there is an edge from vertex `v1` to vertex `v2`, then the matrix entry at `[v1][v2]` is 1 (or the weight of the edge if the graph is weighted). Otherwise, it is 0.
+
+- **Undirected Graph**: For an undirected graph, the adjacency matrix is symmetric. If there is an edge between `v1` and `v2`, then both `[v1][v2]` and `[v2][v1]` will be 1 (or the corresponding weight).
+
+**Time Complexity:**
+
+- **Edge Lookup**: O(1) — Checking whether an edge exists between two vertices is constant time since you can directly access the matrix entry.
+
+- **Iteration Over All Edges**: O(V^2) — Iterating through all the edges requires checking each entry in the VxV matrix.
+
+**Space Complexity:**
+
+- **O(V^2)** — The space complexity is proportional to the number of vertices squared. This makes adjacency matrices less space-efficient for sparse graphs where the number of edges is much smaller than V^2.
+
+The adjacency matrix is simple to implement and allows for quick edge lookups, but it can be memory inefficient for sparse graphs (graphs with few edges).
+
+Here is a visual representation of graphs and their corresponding adjacency matrices:
+
+![Adjacency Matrix](https://www.researchgate.net/publication/347300725/figure/fig1/AS:969208926044162@1608088823984/Different-types-of-graphs-and-their-corresponding-adjacency-matrix-representations-The.ppm)
+
+#### Adjacency List
+
+An **adjacency list** is another way to represent a graph. Instead of a 2D array, an adjacency list uses an array of lists. The array represents all the vertices, and each entry in the array points to a list of nodes that are adjacent to it.
+
+- **Space Efficiency**: Adjacency lists are more space-efficient for sparse graphs compared to adjacency matrices because they only store the edges that exist.
+
+- **Traversal Efficiency**: Adjacency lists allow for efficient traversal of the graph, particularly for algorithms that need to explore all adjacent nodes (like depth-first search or breadth-first search).
+
+**Time Complexity:**
+
+- **Edge Lookup**: O(V) — Checking whether an edge exists between two vertices may require iterating through a list of adjacent vertices, which can take linear time in the number of vertices.
+
+- **Iteration Over All Edges**: O(V + E) — Iterating over all edges requires visiting each vertex and traversing its adjacency list, resulting in time complexity proportional to the number of vertices and edges.
+
+**Space Complexity:**
+
+- **O(V + E)** — The space complexity is proportional to the sum of the number of vertices and the number of edges. This makes adjacency lists much more space-efficient than adjacency matrices for sparse graphs.
+
+The following image shows a directed graph and its corresponding adjacency list representation:
+
+![Directed Graph and Adjacency List](https://www.researchgate.net/profile/Janet_Prichard/publication/239491573/figure/fig3/AS:669390177566727@1536606463912/a-A-directed-graph-and-b-its-adjacency-list.ppm)
 

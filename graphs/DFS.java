@@ -1,6 +1,6 @@
 package graphs;
 
-public class AdjacencyMatrix {
+public class DFS {
 
     public static void main(String[] args) {
 
@@ -21,8 +21,9 @@ public class AdjacencyMatrix {
 
         graph.printMatrix();
 
-        System.out.println("Edge between A & B?: " + graph.hasEdge(0, 1));
-        System.out.println("Edge between C & A?: " + graph.hasEdge(2, 0));
+        System.out.println();
+
+        graph.depthFirstSearch(0);
 
     }
 

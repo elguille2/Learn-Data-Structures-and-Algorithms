@@ -878,3 +878,57 @@ The following image shows a directed graph and its corresponding adjacency list 
 
 ![Directed Graph and Adjacency List](https://www.researchgate.net/profile/Janet_Prichard/publication/239491573/figure/fig3/AS:669390177566727@1536606463912/a-A-directed-graph-and-b-its-adjacency-list.ppm)
 
+#### Depth-First Search (DFS)
+
+**Depth First Search (DFS)** is a fundamental algorithm in graph theory used to traverse or search through graph data structures. The algorithm starts at a given node (referred to as the "starting" node) and explores as far as possible along each branch before backtracking. This approach allows the algorithm to explore the depth of the graph before moving horizontally to other nodes.
+
+#### How DFS Works
+
+1. **Start at the Chosen Node**: DFS begins at a specified starting node, marking it as visited. This node is often referred to as the "root" in tree structures, though in a general graph, it can be any node.
+
+2. **Explore Each Branch Recursively**: From the current node, DFS recursively visits each unvisited adjacent node. This process continues deeper into the graph until it reaches a node that has no unvisited adjacent nodes.
+
+3. **Backtrack**: Once the algorithm reaches a node with no unvisited adjacent nodes, it backtracks to the previous node and continues exploring any other unvisited branches from that node.
+
+4. **Complete the Search**: This process repeats until all nodes reachable from the starting node have been visited. If the graph is disconnected, DFS can be restarted from any unvisited node to explore other components of the graph.
+
+#### Applications of DFS
+
+- **Path Finding**: DFS is used in algorithms that need to find a path between two nodes in a graph.
+- **Cycle Detection**: DFS can be used to detect cycles in a graph by checking if there is a back edge in the recursion stack.
+- **Topological Sorting**: DFS is used to perform topological sorting in a directed acyclic graph (DAG).
+- **Connectivity**: DFS can help determine if a graph is connected, meaning that there is a path between every pair of vertices.
+- **Maze and Puzzle Solving**: DFS is useful in solving puzzles or mazes where the solution is deep within the structure.
+
+### Breadth-First Search (BFS)
+
+**Breadth First Search (BFS)** is a graph traversal algorithm that explores the nodes of a graph level by level. It starts at a given node (referred to as the "starting" node) and visits all its neighbors before moving on to the next level of nodes. BFS is particularly useful for finding the shortest path in unweighted graphs.
+
+#### How BFS Works
+
+1. **Start at the Chosen Node**: BFS begins at a specified starting node, marking it as visited and placing it in a queue. The queue is used to keep track of the nodes that need to be explored.
+
+2. **Explore Neighboring Nodes**: The algorithm dequeues the front node from the queue and visits all its adjacent, unvisited nodes. Each of these nodes is then marked as visited and added to the queue.
+
+3. **Move to the Next Level**: BFS continues to dequeue nodes from the front of the queue, visiting their unvisited neighbors, and adding those neighbors to the queue. This process repeats until the queue is empty, meaning all reachable nodes have been visited.
+
+4. **Complete the Search**: BFS ensures that all nodes are visited level by level, meaning it explores the closest nodes first before moving on to nodes that are farther away.
+
+#### Common Applications of BFS
+
+- **Shortest Path**: BFS is commonly used to find the shortest path in unweighted graphs.
+- **Level Order Traversal**: BFS is ideal for traversing a graph level by level, making it useful for tasks like level-order traversal in trees.
+- **Connected Components**: BFS can be used to find all connected components in a graph, identifying clusters of connected nodes.
+- **Bipartite Graph Checking**: BFS is used to check if a graph is bipartite, meaning its vertices can be divided into two disjoint sets such that no two vertices within the same set are adjacent.
+
+## BFS vs DFS 
+
+| Feature                     | BFS (Breadth First Search)                    | DFS (Depth First Search)                      |
+|-----------------------------|-----------------------------------------------|-----------------------------------------------|
+| **Traversal Approach**      | Traverses a graph level by level.             | Traverses a graph branch by branch.           |
+| **Data Structure**          | Utilizes a Queue.                             | Utilizes a Stack.                             |
+| **Best Use Case**           | Better if the destination is on average close to the start. | Better if the destination is on average far from the start. |
+| **Order of Visit**          | Siblings are visited before children.         | Children are visited before siblings.         |
+| **Popularity**              | Common for social networks, web crawlers, finding shortest paths. | More popular for games, puzzles, and problems requiring deep exploration. |
+
+

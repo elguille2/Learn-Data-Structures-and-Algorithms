@@ -1,6 +1,7 @@
 package graphs;
 
 import java.util.ArrayList;
+import java.util.Queue;
 
 public class GraphForMatrix {
 
@@ -45,4 +46,44 @@ public class GraphForMatrix {
         }
     }
 
+    public void depthFirstSearch(int start){
+        boolean[] visited = new boolean[matrix.length];
+        depthFirstHelper(start, visited);
+    }
+
+    private void depthFirstHelper(int start, boolean[] visited) {
+        if(visited[start]){
+            return;
+        }
+        else {
+            visited[start] = true;
+            System.out.println(nodes.get(start).data + " = visited");
+        }
+        for (int i = 0; i < matrix[start].length; i++){
+            if (matrix[start][i] == 1 && !visited[i]){
+                depthFirstHelper(i, visited);
+            }
+        }
+        return;
+    }
+
+    public void breadthFirstSearch(int start) {
+        Queue<Integer> queue = new java.util.LinkedList<>();
+        boolean[] visited = new boolean[matrix.length];
+
+        queue.add(start);
+        visited[start] = true;
+
+        while (!queue.isEmpty()) {
+            int node = queue.poll();
+            System.out.println(nodes.get(node).data + " = visited");
+
+            for (int i = 0; i < matrix[node].length; i++) {
+                if (matrix[node][i] == 1 && !visited[i]) {
+                    queue.add(i);
+                    visited[i] = true;
+                }
+            }
+        }
+    }
 }

@@ -23,6 +23,9 @@
     - [Recursion](#recursion)
     - [Merge Sort](#merge-sort)
 - [Graphs](#graphs)
+    - [Introduction to Graphs](#introduction-to-graphs)
+    - [Depth-First Search (DFS)](#depth-first-search-dfs)
+    - [Breadth-First Search (BFS)](#breadth-first-search-bfs)
 - [Trees](#trees)
 
 ## Introduction
@@ -878,7 +881,7 @@ The following image shows a directed graph and its corresponding adjacency list 
 
 ![Directed Graph and Adjacency List](https://www.researchgate.net/profile/Janet_Prichard/publication/239491573/figure/fig3/AS:669390177566727@1536606463912/a-A-directed-graph-and-b-its-adjacency-list.ppm)
 
-#### Depth-First Search (DFS)
+### Depth-First Search (DFS)
 
 **Depth First Search (DFS)** is a fundamental algorithm in graph theory used to traverse or search through graph data structures. The algorithm starts at a given node (referred to as the "starting" node) and explores as far as possible along each branch before backtracking. This approach allows the algorithm to explore the depth of the graph before moving horizontally to other nodes.
 
@@ -901,5 +904,76 @@ The following image shows a directed graph and its corresponding adjacency list 
 - **Maze and Puzzle Solving**: DFS is useful in solving puzzles or mazes where the solution is deep within the structure.
 
 ### Breadth-First Search (BFS)
+
+**Breadth First Search (BFS)** is a graph traversal algorithm that explores the nodes of a graph level by level. It starts at a given node (referred to as the "starting" node) and visits all its neighbors before moving on to the next level of nodes. BFS is particularly useful for finding the shortest path in unweighted graphs.
+
+#### How BFS Works
+
+1. **Start at the Chosen Node**: BFS begins at a specified starting node, marking it as visited and placing it in a queue. The queue is used to keep track of the nodes that need to be explored.
+
+2. **Explore Neighboring Nodes**: The algorithm dequeues the front node from the queue and visits all its adjacent, unvisited nodes. Each of these nodes is then marked as visited and added to the queue.
+
+3. **Move to the Next Level**: BFS continues to dequeue nodes from the front of the queue, visiting their unvisited neighbors, and adding those neighbors to the queue. This process repeats until the queue is empty, meaning all reachable nodes have been visited.
+
+4. **Complete the Search**: BFS ensures that all nodes are visited level by level, meaning it explores the closest nodes first before moving on to nodes that are farther away.
+
+#### Common Applications of BFS
+
+- **Shortest Path**: BFS is commonly used to find the shortest path in unweighted graphs.
+- **Level Order Traversal**: BFS is ideal for traversing a graph level by level, making it useful for tasks like level-order traversal in trees.
+- **Connected Components**: BFS can be used to find all connected components in a graph, identifying clusters of connected nodes.
+- **Bipartite Graph Checking**: BFS is used to check if a graph is bipartite, meaning its vertices can be divided into two disjoint sets such that no two vertices within the same set are adjacent.
+
+#### BFS vs DFS 
+
+| Feature                     | BFS (Breadth First Search)                    | DFS (Depth First Search)                      |
+|-----------------------------|-----------------------------------------------|-----------------------------------------------|
+| **Traversal Approach**      | Traverses a graph level by level.             | Traverses a graph branch by branch.           |
+| **Data Structure**          | Utilizes a Queue.                             | Utilizes a Stack.                             |
+| **Best Use Case**           | Better if the destination is on average close to the start. | Better if the destination is on average far from the start. |
+| **Order of Visit**          | Siblings are visited before children.         | Children are visited before siblings.         |
+| **Popularity**              | Common for social networks, web crawlers, finding shortest paths. | More popular for games, puzzles, and problems requiring deep exploration. |
+
+## Trees
+
+### Introduction to Trees
+
+A **tree** is a widely used data structure in computer science that is a hierarchical, non-linear collection of nodes. Each node contains a value or key and can have child nodes, forming a parent-child relationship. Trees are essential for modeling hierarchical structures like file systems, organizational charts, and more.
+
+#### Key Terminology
+
+- **Root**: The topmost node in a tree, from which all other nodes descend. The root node does not have a parent.
+- **Child**: A node that descends from another node. In the diagram, node B is a child of node A.
+- **Parent**: A node that has one or more children. Node A is the parent of node B.
+- **Subtree**: A tree formed by a node and all of its descendants. For example, nodes B, D, and E form a subtree.
+- **Siblings**: Nodes that share the same parent. In the diagram, nodes D and E are siblings as they both descend from node B.
+- **Leaf Nodes**: Nodes that do not have any children. These nodes are the "end" of the tree. In the diagram, nodes K, L, M, N, O, and P are leaf nodes.
+- **Edge**: The connection between two nodes. An edge connects a parent to its child.
+- **Height**: The height of a tree is the number of edges on the longest downward path from the root to a leaf.
+- **Level**: The level of a node is determined by the distance from the root node. The root is at level 0, its children are at level 1, and so on.
+
+#### Tree Structure Visualization
+
+Here is a visual representation of a tree data structure:
+
+![Tree Data Structure](https://media.geeksforgeeks.org/wp-content/uploads/20221129094006/Treedatastructure.png)
+
+#### Characteristics of Trees
+
+1. **Hierarchical Structure**: Unlike linear data structures like arrays or linked lists, trees organize data hierarchically, allowing efficient insertion, deletion, and search operations.
+
+2. **Single Root**: Each tree has only one root node from which all other nodes descend.
+
+3. **Recursive Nature**: Trees are inherently recursive structures since each subtree is itself a tree.
+
+#### Applications of Trees
+
+- **File Systems**: Trees are used to represent hierarchical file structures, where folders contain subfolders and files.
+- **Binary Search Trees (BST)**: Trees are used to efficiently manage and retrieve sorted data.
+- **Heaps**: A type of tree used in priority queues.
+- **Expression Trees**: Trees are used to represent mathematical expressions, where each node is an operator or operand.
+
+### Binary Search Trees (BST)
+
 
 

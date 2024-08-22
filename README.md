@@ -22,6 +22,8 @@
     - [Insertion Sort](#insertion-sort)
     - [Recursion](#recursion)
     - [Merge Sort](#merge-sort)
+    - [Quick Sort](#quick-sort)
+    - [Hash Tables](#hash-tables)
 - [Graphs](#graphs)
     - [Introduction to Graphs](#introduction-to-graphs)
     - [Depth-First Search (DFS)](#depth-first-search-dfs)
@@ -802,7 +804,7 @@ key.hashCode() % capacity = index
 - **Best Case: O(1)** — In the best case, the hash function distributes keys uniformly across the table, and there are no collisions, allowing for constant-time operations.
 - **Worst Case: O(n)** — In the worst case, all keys hash to the same index, causing all entries to be stored in a single bucket, resulting in linear-time operations as it degrades to a linked list.
 
-#### Differences Between HashTables and HashMaps
+#### Differences Between sortingAlgorithms.HashTables and HashMaps
 
 - Thread Safety:
     - `HashTable` is synchronized, meaning it is thread-safe and can be shared between multiple threads without additional synchronization.
@@ -814,7 +816,7 @@ key.hashCode() % capacity = index
     - `HashTable` is considered a legacy class from earlier versions of Java and has largely been replaced by HashMap for most use cases.
     - `HashMap` is part of the Java Collections Framework and is generally preferred in modern Java programming due to its flexibility and better performance.
 
-HashTables are effective for quick data access and management, especially in multi-threaded environments where synchronization is necessary. However, for most modern applications, HashMap is preferred due to its flexibility and better performance.
+sortingAlgorithms.HashTables are effective for quick data access and management, especially in multi-threaded environments where synchronization is necessary. However, for most modern applications, HashMap is preferred due to its flexibility and better performance.
 
 ## Graphs
 

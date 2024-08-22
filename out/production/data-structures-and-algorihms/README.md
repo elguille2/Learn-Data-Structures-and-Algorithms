@@ -27,6 +27,9 @@
     - [Depth-First Search (DFS)](#depth-first-search-dfs)
     - [Breadth-First Search (BFS)](#breadth-first-search-bfs)
 - [Trees](#trees)
+    - [Introduction to Trees](#introduction-to-trees)
+    - [Binary Search Trees (BST)](#binary-search-trees-bst)
+    - [Tree Traversal](#tree-traversal)
 
 ## Introduction
 
@@ -974,6 +977,126 @@ Here is a visual representation of a tree data structure:
 - **Expression Trees**: Trees are used to represent mathematical expressions, where each node is an operator or operand.
 
 ### Binary Search Trees (BST)
+
+A **Binary Search Tree (BST)** is a type of binary tree in which each node has at most two children, referred to as the left child and the right child. What distinguishes a BST from other binary trees is the binary search property, which ensures that for each node:
+- All the nodes in its left subtree have values less than the node’s value.
+- All the nodes in its right subtree have values greater than the node’s value.
+
+#### Key Operations in a BST
+
+1. **Insertion**: To insert a new node into a BST, you start at the root and compare the value of the new node with the current node. If the value is smaller, you proceed to the left child; if it is larger, you proceed to the right child. This process repeats until an appropriate null spot is found for the new node.
+
+2. **Search**: Searching in a BST follows the same logic as insertion. Starting at the root, you compare the target value with the current node’s value. You traverse the tree to the left or right, depending on whether the target is smaller or larger, until you either find the target or reach a null reference, which indicates the target is not present in the tree.
+
+3. **Removal**: Removal in a BST is more complex because it requires maintaining the binary search property after a node is deleted. There are three cases to handle:
+    - **Node is a leaf**: Simply remove the node.
+    - **Node has one child**: Remove the node and connect its parent directly to its child.
+    - **Node has two children**: Find the in-order successor (smallest node in the right subtree) or the in-order predecessor (largest node in the left subtree) to replace the deleted node and then adjust the tree accordingly.
+
+    
+![Binary Search Tree Traversal](https://courses.grainger.illinois.edu/cs225/sp2024/assets/notes/bst/bsttreetraversal.png)
+
+#### Time Complexity
+
+The time complexity of a Binary Search Tree depends on whether the tree is balanced or unbalanced:
+
+- **Balanced BST**: O(log n) for insertion, search, and deletion. This is the ideal case, where the height of the tree is kept logarithmic relative to the number of nodes.
+- **Unbalanced BST**: O(n) for insertion, search, and deletion. This occurs when the tree becomes skewed, resembling a linked list due to operations like inserting elements in sorted order.
+
+#### Advantages of Binary Search Trees
+
+- **Efficient Searching**: Due to the binary search property, a well-balanced BST allows for efficient searching, insertion, and deletion operations.
+- **Sorted Order**: An in-order traversal of a BST returns the elements in sorted order, which makes it useful for sorting applications.
+
+#### Disadvantages
+
+- **Imbalance**: If the BST becomes unbalanced (for example, if the nodes are inserted in increasing or decreasing order), the tree degenerates into a linked list, and the time complexity of operations degrades to O(n).
+
+#### Applications of Binary Search Trees
+
+- **Search Applications**: BSTs are commonly used in search applications where data is constantly inserted, deleted, and queried.
+- **Sorting**: In-order traversal of a BST is an efficient way to retrieve elements in a sorted manner.
+- **Database Indexing**: Many databases use BSTs or variations (like B-trees) to optimize search operations.
+
+### Tree Traversal
+
+**Tree Traversal** refers to the process of visiting each node in a tree data structure in a systematic way. Traversal methods are essential for performing operations such as searching, updating, or displaying the contents of a tree. There are several types of tree traversal techniques, categorized into two main groups: **Depth-First Traversal** and **Breadth-First Traversal**.
+
+#### Types of Tree Traversal
+
+##### 1. Depth-First Traversal (DFS)
+
+Depth-First Traversal explores as far down a branch as possible before backtracking. It is generally implemented using recursion or a stack.
+
+The three common types of DFS tree traversals are:
+
+- **In-Order Traversal**:
+    - Process: Left subtree → Root → Right subtree
+    - Application: In binary search trees (BST), an in-order traversal visits nodes in ascending order.
+    - Example: For a BST, the nodes will be visited in the order that they would naturally be sorted.
+
+- **Pre-Order Traversal**:
+    - Process: Root → Left subtree → Right subtree
+    - Application: Pre-order traversal is often used to create a copy of the tree or to prefix notation (Polish notation) in expressions.
+    - Example: Visit the root first, then recursively visit the left subtree and finally the right subtree.
+
+- **Post-Order Traversal**:
+    - Process: Left subtree → Right subtree → Root
+    - Application: Post-order traversal is useful for deleting or freeing nodes in a tree. It is also used in postfix notation (Reverse Polish notation) in expressions.
+    - Example: Visit both subtrees before visiting the root node, which is useful for cleanup operations.
+
+#### 2. Breadth-First Traversal (BFS)
+
+Breadth-First Traversal, also known as **Level-Order Traversal**, explores the nodes level by level, starting from the root and moving horizontally across the tree. It is typically implemented using a queue.
+
+- **Level-Order Traversal**:
+    - Process: Visit nodes level by level, starting from the root.
+    - Application: BFS is useful for scenarios where we need to explore nodes closest to the root first. It is commonly used in algorithms like finding the shortest path in an unweighted tree or graph.
+    - Example: In a binary tree, the nodes are visited level by level from top to bottom, starting with the root, followed by its children, and so on.
+
+#### Visual Example of Tree Traversals
+
+Consider the following tree structure:
+
+         1
+      /     \
+     2       3
+    / \     / \
+    4  5    6  7
+
+
+- **In-Order Traversal**: 4 → 2 → 5 → 1 → 6 → 3 → 7
+- **Pre-Order Traversal**: 1 → 2 → 4 → 5 → 3 → 6 → 7
+- **Post-Order Traversal**: 4 → 5 → 2 → 6 → 7 → 3 → 1
+- **Level-Order Traversal**: 1 → 2 → 3 → 4 → 5 → 6 → 7
+
+#### Applications of Tree Traversal
+
+1. **In-Order Traversal**:
+    - Sorting the elements in a binary search tree.
+    - Converting a tree to a sorted list.
+
+2. **Pre-Order Traversal**:
+    - Creating a copy of the tree.
+    - Expression evaluation in prefix notation (Polish notation).
+
+3. **Post-Order Traversal**:
+    - Deleting a tree.
+    - Expression evaluation in postfix notation (Reverse Polish notation).
+
+4. **Level-Order Traversal**:
+    - Finding the shortest path in unweighted trees or graphs.
+    - Implementing algorithms like breadth-first search in graph structures.
+
+#### Summary
+
+Tree traversal methods allow you to explore all nodes in a tree systematically. The choice of traversal technique depends on the specific task at hand:
+- Use **in-order traversal** when you need sorted data from a BST.
+- Use **pre-order traversal** when you need to process the root before its children.
+- Use **post-order traversal** when the children need to be processed before the root.
+- Use **level-order traversal** when you want to explore nodes level by level.
+
+
 
 
 

@@ -862,7 +862,7 @@ The adjacency matrix is simple to implement and allows for quick edge lookups, b
 
 Here is a visual representation of graphs and their corresponding adjacency matrices:
 
-![Adjacency Matrix](https://www.researchgate.net/publication/347300725/figure/fig1/AS:969208926044162@1608088823984/Different-types-of-graphs-and-their-corresponding-adjacency-matrix-representations-The.ppm)
+![Adjacency Matrix](./images/adjacencyMatrix.png)
 
 #### Adjacency List
 
@@ -884,7 +884,7 @@ An **adjacency list** is another way to represent a graph. Instead of a 2D array
 
 The following image shows a directed graph and its corresponding adjacency list representation:
 
-![Directed Graph and Adjacency List](https://www.researchgate.net/profile/Janet_Prichard/publication/239491573/figure/fig3/AS:669390177566727@1536606463912/a-A-directed-graph-and-b-its-adjacency-list.ppm)
+![Directed Graph and Adjacency List](./images/adjacencyList.png)
 
 ### Depth-First Search (DFS)
 

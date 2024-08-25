@@ -358,7 +358,7 @@ In Java, both `LinkedList` and `ArrayList` are part of the Java Collections Fram
 
 The following are some of the most common Big O notations, listed from the most efficient to the least efficient:
 
-![Graph showing different Big O complexities](./images/bigONotationComplexity.png)
+![Graph showing different Big O complexities](https://miro.medium.com/v2/resize:fit:4800/format:webp/1*dWet_YU-5072Kcko7LzsuQ.jpeg)
 
 - **O(1) - Constant Time**: The runtime does not change regardless of the input size. This is the most efficient complexity as the algorithm takes a constant amount of time, no matter how large the input is.
     - **Examples**:
@@ -699,7 +699,7 @@ Recursion is a powerful tool in a programmer's arsenal, but it should be used ju
 
 Here is a visual representation of how Merge Sort works:
 
-![Merge Sort Process](./images/mergeSort.png)
+![Merge Sort Process](https://cdn.educba.com/academy/wp-content/uploads/2021/06/7.png)
 
 This image illustrates the process of dividing the array into smaller subarrays, sorting them, and then merging them back together.
 
@@ -750,7 +750,7 @@ Merge Sort is a powerful sorting algorithm, especially when working with large d
 
 Here is a visual representation of how QuickSort works:
 
-![QuickSort Process](./images/quickSort.png)
+![QuickSort Process](https://cdn-images-1.medium.com/max/1080/1*zI6AMtMYGWqOQUo80r3v8A.jpeg)
 
 This image illustrates the process of choosing a pivot, partitioning the array around the pivot, and recursively sorting the sub-arrays.
 
@@ -838,7 +838,7 @@ Graphs can be classified into several types based on their properties:
 
 Here is a visual representation of these types of graphs:
 
-![Types of Graphs](./images/typesOfGraphs.png)
+![Types of Graphs](https://images.slideplayer.com/14/4318595/slides/slide_3.jpg)
 
 #### Adjacency Matrix
 

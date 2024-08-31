@@ -1,9 +1,9 @@
 # Learn Data Structures and Algorithms
 ## Table of Contents
 - [Introduction](#introduction)
-  - [Whats is a Data Structure?](#whats-is-a-data-structure)
+  - [What is a Data Structure?](#what-is-a-data-structure)
   - [What is an Algorithm?](#what-is-an-algorithm)
-  - [Why learn Data Structures and Algorithms?](#why-learn-data-structures-and-algorithms)
+  - [Why Learn Data Structures and Algorithms?](#why-learn-data-structures-and-algorithms)
 - [Basic Data Structures](#basic-data-structures)
   - [Stacks](#stacks)
   - [Queues](#queues)
@@ -35,9 +35,9 @@
 
 ## Introduction
 
-### Whats is a Data Structure?
+### What is a Data Structure?
 
-Data structure:. a named location that can be used to store and organize data.
+Data structure: a named location that can be used to store and organize data.
 
 Example:
 + array:  a collection of elements stored at contiguous memory locations.
@@ -66,7 +66,7 @@ Example: Linear Search Algorithm.
   return -1;
   ```
   
-### Why learn Data Structures and Algorithms?
+### Why Learn Data Structures and Algorithms?
 1. You will write code that is both time and memory efficient.
 2. Commonly asked in technical interviews.
 
@@ -122,18 +122,18 @@ A queue is a linear data structure that follows the First In First Out (FIFO) pr
 In Java, the Queue interface is implemented by the LinkedLists class.
 
 ```java
-Queue<Integer> queue = new LinkedLists<>();
+Queue<Integer> queue = new LinkedList<>();
 ```
 
 Methods:
 1. Insert:
-   2. enqueue(): adds an element to the rear of the queue.
-   3. add(): adds an element to the rear of the queue.
-   4. offer(): adds an element to the rear of the queue.
+   1. enqueue(): adds an element to the rear of the queue.
+   2. add(): adds an element to the rear of the queue.
+   3. offer(): adds an element to the rear of the queue.
 2. Remove:
-   3. dequeue(): removes the front element from the queue.
-   4. remove(): removes the front element from the queue.
-   5. poll(): removes the front element from the queue.
+   1. dequeue(): removes the front element from the queue.
+   2. remove(): removes the front element from the queue.
+   3. poll(): removes the front element from the queue.
 
 Where are queues used?
 1. Keyboard buffers (letters should appear in the order they are typed).
@@ -336,7 +336,7 @@ In Java, both `LinkedList` and `ArrayList` are part of the Java Collections Fram
 
 2. **Insertion and Deletion**:
     - **ArrayList**: Inserting or deleting elements at the end of the list is fast (O(1)), but at the beginning or middle of the list, it can be slow (O(n)) because elements need to be shifted.
-    - **LinkedList**: Insertion and deletion are faster (O(1)) at the beginning or end of the list, and generally more efficient than `ArrayList` for these operations. However, inserting or deleting in the middle requires traversal (O(n)).
+    - **LinkedList**: Insertion and deletion are faster (O(1)) at the beginning or end of the list, and generally more efficient than `ArrayList` for these operations in such cases. However, inserting or deleting in the middle requires traversal (O(n)).
 
 #### Situational Recommendations
 
@@ -358,7 +358,7 @@ In Java, both `LinkedList` and `ArrayList` are part of the Java Collections Fram
 
 The following are some of the most common Big O notations, listed from the most efficient to the least efficient:
 
-![Graph showing different Big O complexities](./images/bigONotationComplexity.png)
+![Graph showing different Big O complexities](https://i.imgur.com/utGhCez.png)
 
 - **O(1) - Constant Time**: The runtime does not change regardless of the input size. This is the most efficient complexity as the algorithm takes a constant amount of time, no matter how large the input is.
     - **Examples**:
@@ -699,7 +699,7 @@ Recursion is a powerful tool in a programmer's arsenal, but it should be used ju
 
 Here is a visual representation of how Merge Sort works:
 
-![Merge Sort Process](./images/mergeSort.png)
+![Merge Sort Process](https://i.imgur.com/haqAwky.png)
 
 This image illustrates the process of dividing the array into smaller subarrays, sorting them, and then merging them back together.
 
@@ -750,7 +750,7 @@ Merge Sort is a powerful sorting algorithm, especially when working with large d
 
 Here is a visual representation of how QuickSort works:
 
-![QuickSort Process](./images/quickSort.png)
+![QuickSort Process](https://i.imgur.com/xMglMFE.png)
 
 This image illustrates the process of choosing a pivot, partitioning the array around the pivot, and recursively sorting the sub-arrays.
 
@@ -838,7 +838,7 @@ Graphs can be classified into several types based on their properties:
 
 Here is a visual representation of these types of graphs:
 
-![Types of Graphs](./images/typesOfGraphs.png)
+![Types of Graphs](https://i.imgur.com/6Wuj5a4.png)
 
 #### Adjacency Matrix
 
@@ -862,7 +862,7 @@ The adjacency matrix is simple to implement and allows for quick edge lookups, b
 
 Here is a visual representation of graphs and their corresponding adjacency matrices:
 
-![Adjacency Matrix](./images/adjacencyMatrix.png)
+![Adjacency Matrix](https://i.imgur.com/TESsUSC.png)
 
 #### Adjacency List
 
@@ -884,7 +884,7 @@ An **adjacency list** is another way to represent a graph. Instead of a 2D array
 
 The following image shows a directed graph and its corresponding adjacency list representation:
 
-![Directed Graph and Adjacency List](./images/adjacencyList.png)
+![Directed Graph and Adjacency List](https://i.imgur.com/cFEL7Im.png)
 
 ### Depth-First Search (DFS)
 

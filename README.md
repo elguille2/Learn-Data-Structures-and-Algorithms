@@ -35,6 +35,8 @@
 
 ## Introduction
 
+This repository provides both theoretical explanations and practical implementations of various data structures and algorithms. The README contains comprehensive theoretical knowledge, while the accompanying code directories offer implementations of these concepts in Java. Whether you are learning the basics or refining your understanding of more complex algorithms, this repository serves as a valuable resource.
+
 ### What is a Data Structure?
 
 Data structure: a named location that can be used to store and organize data.
